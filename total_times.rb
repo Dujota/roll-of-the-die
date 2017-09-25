@@ -1,28 +1,51 @@
+# Copy your last program to total_times.rb.
 #
-# # from searching on google got an array solution and was able to put this together with
-# # the repeated_permutation examples in ruby-docs + my searching which let me understand to use join
+# Notice that the totals above range from 2 to 12.
 #
-# dice_rolls = *(1..6)
+# Figure out how many times each total will come up if each possible permutation is rolled once.
 #
-# dice_rolls.repeated_permutation(2) { |rolls| puts rolls.join(' ') }
+# Use a Hash with keys of 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 & 12 to keep track of how many times each total occurred.
+#
+# Your output should look like so:
+#
+# $ ruby total_times.rb
+# 2 occurs 1 times
+# 3 occurs 2 times
+# 4 occurs 3 times
+# 5 occurs 4 times
+# 6 occurs 5 times
+# 7 occurs 6 times
+# 8 occurs 5 times
+# 9 occurs 4 times
+# 10 occurs 3 times
+# 11 occurs 2 times
+# 12 occurs 1 times
 
-# was thinkning of storing into variable and then converting to array, and using the indexies to pull the variable
-#into the new string, which seems complicated?????
 
-# will ask for help to make it work :)
+# count = 0
 
-# Use ruby to figure out how many possible permutations there are.
+# https://stackoverflow.com/questions/7025531/ruby-rails-converting-a-range-into-a-hash
+# found this guide to setup hash for the range porvided 2-12, will use  h[x] = nil instead as a place holder value
+# h = {}
+# (1..10).each {|x| h[x] = "£#{x}"}
 
+total_times = {}
 
-# Write a program that goes through all possible permutations of two dice rolling.
+(2..12).each { |roll_sum|  total_times[roll_sum] = nil }
 
-
-# tried with just iteration of values 1-6 for two dice and printing both out
-count = 0
 (1..6).each { |roll1|
   (1..6).each { |roll2|
-    puts "Dice Roll: #{roll1}, #{roll2}  Total: #{roll1 + roll2}"
-    count +=1
+    #i need to record each instance of the sum into the hash, which uses the sum ecorded on the last exercise (Total: #{roll1 + roll2}") as the key in our new array created with range (2..12 )
+
+    #issue how to record each instance and add it to the hash? bobby[:hair] = 'nonexistent' >>>> use this? to add
+    #tried total_times[roll1 + roll2] = 'test'
+    total_times[roll1 + roll2] = 'test'
+
+    # previous exercise code used to help me create new code
+    # puts "Dice Roll: #{roll1}, #{roll2}  Total: #{roll1 + roll2}"
+    # count +=1
   }
 }
-puts "There are #{count} possibilities"
+
+puts total_times
+# puts "There are #{count} possibilities"
