@@ -19,4 +19,4 @@ dice_rolls.repeated_permutation(2) { |rolls| puts rolls.join(' ') }
 # was thinkning of storing into variable and then converting to array, and using the indexies to pull the variable
 #into the new string, which seems complicated?????
 
-# will ask for help to make it work :) 
+# will ask for help to make it work :)
