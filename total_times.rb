@@ -46,20 +46,16 @@ total_times = {}
     total_times[roll1 + roll2] += 1
     #got error undefined method `+' for nil:NilClass (NoMethodError) when i started to add 1 to the value every time the
     #the key overwrote the same instance of itself. had to google it. solution above on line 34
-
-
-
-
-
-    # previous exercise code used to help me create new code
-    # puts "Dice Roll: #{roll1}, #{roll2}  Total: #{roll1 + roll2}"
-    # count +=1
   }
 }
 
-puts total_times
+total_times.each { |roll_sum, times_count| puts "\n Just so you know: when rolling two dice, if the sum of the roll is #{roll_sum} \n Then it occurs #{times_count} times \n"}
+
+
+# puts total_times >>>> was using this to test the output of my has after i went through the roll sums
 # test case of total_times[roll1 + roll2] = 'test'
 # {2=>"test", 3=>"test", 4=>"test", 5=>"test", 6=>"test", 7=>"test", 8=>"test", 9=>"test", 10=>"test", 11=>"test", 12=>"test"}
+
 
 
 
