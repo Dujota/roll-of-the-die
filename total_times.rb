@@ -39,7 +39,7 @@ total_times = {}
 
     #issue how to record each instance and add it to the hash? bobby[:hair] = 'nonexistent' >>>> use this? to add
     #tried total_times[roll1 + roll2] = 'test'
-    total_times[roll1 + roll2] = 'test'
+    total_times[roll1 + roll2] = '1'
 
     # previous exercise code used to help me create new code
     # puts "Dice Roll: #{roll1}, #{roll2}  Total: #{roll1 + roll2}"
@@ -48,4 +48,11 @@ total_times = {}
 }
 
 puts total_times
+# test case of total_times[roll1 + roll2] = 'test'
+# {2=>"test", 3=>"test", 4=>"test", 5=>"test", 6=>"test", 7=>"test", 8=>"test", 9=>"test", 10=>"test", 11=>"test", 12=>"test"}
+
+
+
+
+
 # puts "There are #{count} possibilities"
