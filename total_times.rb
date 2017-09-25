@@ -31,7 +31,11 @@
 
 total_times = {}
 
-(2..12).each { |roll_sum|  total_times[roll_sum] = nil }
+(2..12).each { |roll_sum|  total_times[roll_sum] = nil.to_i }
+#got error: undefined method `+' for nil:NilClass (NoMethodError)
+# ruby-docs - arithmatic operations not allowed on nil, need to turn into an integer
+# https://stackoverflow.com/questions/37715446/undefined-method-for-nilnilclass-ruby
+# https://ruby-doc.org/core-2.4.1/NilClass.html
 
 (1..6).each { |roll1|
   (1..6).each { |roll2|
@@ -40,6 +44,12 @@ total_times = {}
     #issue how to record each instance and add it to the hash? bobby[:hair] = 'nonexistent' >>>> use this? to add
     #tried total_times[roll1 + roll2] = 'test'
     total_times[roll1 + roll2] += 1
+    #got error undefined method `+' for nil:NilClass (NoMethodError) when i started to add 1 to the value every time the
+    #the key overwrote the same instance of itself. had to google it. solution above on line 34
+
+
+
+
 
     # previous exercise code used to help me create new code
     # puts "Dice Roll: #{roll1}, #{roll2}  Total: #{roll1 + roll2}"
